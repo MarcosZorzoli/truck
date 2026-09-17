@@ -81,7 +81,7 @@ shape = SubResource("CapsuleShape3D_phcwn")
 [node name="Area3D" type="Area3D" parent="." index="3" unique_id=1066712270]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=742360175]
-transform = Transform3D(1.7633555, 0, 0, 0, 1, 0, 0, 0, 1.573483, -0.007873535, 0.72632945, 1.2142972)
+transform = Transform3D(3.2043269, 0, 0, 0, 1, 0, 0, 0, 2.2170115, -0.007873535, 0.72632945, 1.94565)
 shape = SubResource("BoxShape3D_4klsg")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

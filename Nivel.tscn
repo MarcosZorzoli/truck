@@ -21,7 +21,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.4610596, 0)
 transform = Transform3D(0.65621537, 0, -0.75457364, 0, 1, 0, 0.75457364, 0, 0.65621537, -2.768898, -2.9054565, -0.23498535)
 
 [node name="Casa" parent="." unique_id=1446800074 instance=ExtResource("3_c4cy6")]
-transform = Transform3D(0.989411, 0, -0.1451412, 0, 1, 0, 0.1451412, 0, 0.989411, -3.5286968, -2.4205933, 8.726538)
+transform = Transform3D(0.98941094, 0, -0.14514118, 0, 1, 0, 0.14514118, 0, 0.98941094, -3.5286965, -2.4761963, 8.726537)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1937994640]
 transform = Transform3D(1, 0, 0, 0, -0.6572716, 0.75365376, 0, -0.75365376, -0.6572716, 0.36697388, 6.7269897, -16.53543)
@@ -31,7 +31,7 @@ shadow_enabled = true
 transform = Transform3D(0.7987953, 0.601603, 0, -0.601603, 0.7987953, 0, 0, 0, 1, 7.1455383, -4.7079163, -6.5256805)
 
 [node name="Casa2" parent="." unique_id=937315861 instance=ExtResource("6_bxp70")]
-transform = Transform3D(0.9980622, 0, -0.062224228, 0, 1, 0, 0.062224228, 0, 0.9980622, 0, -2.4309082, 3.692606)
+transform = Transform3D(0.998062, 0, -0.062224217, 0, 1, 0, 0.062224217, 0, 0.998062, 0, -2.463562, 3.6926053)
 
 [node name="CamioMilitar" parent="." unique_id=467793788 instance=ExtResource("7_2027d")]
 transform = Transform3D(-0.6060526, 0, -0.7954245, 0, 1, 0, 0.7954245, 0, -0.6060526, -0.05369772, -2.9869385, 7.254897)
