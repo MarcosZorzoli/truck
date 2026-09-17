@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bg37jkb2bhyd6"]
+
+[ext_resource type="PackedScene" uid="uid://br2yo4eua5x40" path="res://totopo_t_pose.tscn" id="2_8g3sk"]
+[ext_resource type="PackedScene" uid="uid://co6nh5484ie8t" path="res://truck/Truck.tscn" id="2_noarx"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_phcwn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4klsg"]
+size = Vector3(1, 0.15771484, 1)
+
+[sub_resource type="Environment" id="Environment_a202f"]
+background_energy_multiplier = 3.39
+ambient_light_source = 3
+ambient_light_color = Color(0.5370113, 0.5370113, 0.5370113, 1)
+ambient_light_energy = 3.39
+fog_light_color = Color(1, 1, 1, 1)
+fog_light_energy = 13.41
+fog_sun_scatter = 1.25
+
+[node name="Node3D" type="Node3D" unique_id=1138053664]
+
+[node name="Suelo" type="RigidBody3D" parent="." unique_id=485984982]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.74084383, 0)
+freeze = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Suelo" unique_id=507178280]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
+mesh = SubResource("PlaneMesh_phcwn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Suelo" unique_id=1886007624]
+transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 25, 0, -0.08110094, 0)
+shape = SubResource("BoxShape3D_4klsg")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=883017492]
+environment = SubResource("Environment_a202f")
+
+[node name="blockbench_export" parent="." unique_id=459234724 instance=ExtResource("2_noarx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.43344867, -1.246686, 1.2469715)
+
+[node name="Totopo T-Pose" parent="." unique_id=2068513272 instance=ExtResource("2_8g3sk")]
+transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 3.5476937, -0.7698672, -5.0041294)
+
+[node name="Camera3D" type="Camera3D" parent="Totopo T-Pose" unique_id=1876780136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7683716e-07, 1.1412244, 2.2523851)

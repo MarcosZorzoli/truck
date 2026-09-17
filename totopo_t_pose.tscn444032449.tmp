@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://br2yo4eua5x40"]
+
+[ext_resource type="PackedScene" uid="uid://bysheu2af6nwb" path="res://Player/TotopoAnimaciones/Totopo T-Pose.fbx" id="1_gkqwh"]
+[ext_resource type="Script" uid="uid://c6jlujjjx82mv" path="res://totopo_t_pose.gd" id="2_qfhvv"]
+[ext_resource type="AnimationLibrary" uid="uid://b6iv61dedx36j" path="res://Player/TotopoAnimaciones/Climbing.fbx" id="3_mq81o"]
+[ext_resource type="AnimationLibrary" uid="uid://ckw47hu2inbfy" path="res://Player/TotopoAnimaciones/ClimbingStand.fbx" id="4_hrnas"]
+[ext_resource type="AnimationLibrary" uid="uid://cm2uaej20l30o" path="res://Player/TotopoAnimaciones/Crouch To Stand.fbx" id="5_ri8fi"]
+[ext_resource type="AnimationLibrary" uid="uid://dv8xgndhi822k" path="res://Player/TotopoAnimaciones/Hit To Body.fbx" id="6_1p31k"]
+[ext_resource type="AnimationLibrary" uid="uid://bbwae6ee2neu7" path="res://Player/TotopoAnimaciones/Idle.fbx" id="7_64owr"]
+[ext_resource type="AnimationLibrary" uid="uid://b86op66lqguvj" path="res://Player/TotopoAnimaciones/Jump.fbx" id="8_by1qk"]
+[ext_resource type="AnimationLibrary" uid="uid://c470nd47gs0ae" path="res://Player/TotopoAnimaciones/Left Strafe.fbx" id="9_6wr3c"]
+[ext_resource type="AnimationLibrary" uid="uid://bw1sykpavx7vw" path="res://Player/TotopoAnimaciones/Right Strafe.fbx" id="10_omi76"]
+[ext_resource type="AnimationLibrary" uid="uid://c8vagep8wbncy" path="res://Player/TotopoAnimaciones/Running.fbx" id="11_udbpp"]
+[ext_resource type="AnimationLibrary" uid="uid://biei1gpse0hqn" path="res://Player/TotopoAnimaciones/Unarmed Run Back.fbx" id="12_sr4cg"]
+[ext_resource type="AnimationLibrary" uid="uid://bbkef73njojnr" path="res://Player/TotopoAnimaciones/Unarmed Walk Back.fbx" id="13_weycg"]
+[ext_resource type="AnimationLibrary" uid="uid://olr5lbhadiws" path="res://Player/TotopoAnimaciones/Walking.fbx" id="14_52o54"]
+[ext_resource type="AnimationLibrary" uid="uid://s3qr3w0t1kq8" path="res://Player/TotopoAnimaciones/Zombie Punching.fbx" id="15_qc8v2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ewed5"]
+albedo_color = Color(0.36862746, 1, 0.1764706, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_phcwn"]
+radius = 0.25
+height = 1.0583007
+
+[node name="Totopo T-Pose" unique_id=2068513272 groups=["player"] instance=ExtResource("1_gkqwh")]
+axis_lock_linear_x = true
+axis_lock_angular_x = true
+script = ExtResource("2_qfhvv")
+
+[node name="Skeleton3D" parent="." index="0" unique_id=998936736]
+transform = Transform3D(0.9841112, 0, 0.1775532, 0, 1, 0, -0.1775532, 0, 0.9841112, -0.080002666, 0, 0)
+bones/0/position = Vector3(0.073897675, 0.32940412, 0.06906616)
+bones/0/rotation = Quaternion(0.023803372, -0.19854492, -0.0003820967, 0.9798026)
+bones/1/rotation = Quaternion(-0.07528298, 0.00011862943, 0.0016229689, 0.9971609)
+bones/2/rotation = Quaternion(-0.0024968744, -0.0010725509, 0.009008627, 0.99995583)
+bones/3/rotation = Quaternion(-0.0024967038, -0.001071239, 0.00900883, 0.99995583)
+bones/4/rotation = Quaternion(0.020810096, 0.029146325, 0.017074734, 0.9992127)
+bones/5/rotation = Quaternion(-0.042635325, 0.16817577, -0.019376257, 0.98464406)
+bones/7/rotation = Quaternion(-0.5757856, -0.33772442, 0.6967693, -0.26253733)
+bones/8/position = Vector3(-1.07878304e-10, 0.15661657, -6.6553507e-10)
+bones/8/rotation = Quaternion(0.36731836, 0.029418677, 0.056282967, 0.9279246)
+bones/9/position = Vector3(-1.5225643e-10, 0.16936888, 2.5023994e-10)
+bones/9/rotation = Quaternion(-0.007414444, -0.0009220828, 0.030942325, 0.99949324)
+bones/10/position = Vector3(-1.915168e-09, 0.22348228, -5.021138e-10)
+bones/10/rotation = Quaternion(0.033481594, 0.4243083, 0.04473625, 0.9037921)
+bones/11/position = Vector3(-1.7261192e-13, 0.005105123, -5.8520966e-12)
+bones/11/rotation = Quaternion(0.20431365, -0.0008895234, 0.02179692, 0.9786624)
+bones/12/position = Vector3(1.0597876e-09, 0.021698099, -4.022631e-10)
+bones/12/rotation = Quaternion(0.054481935, 0.0068640434, -0.072446175, 0.9958595)
+bones/13/rotation = Quaternion(0.10121088, 0.006756354, 0.09497157, 0.9902985)
+bones/15/rotation = Quaternion(0.59114856, -0.33351752, 0.6854192, 0.2636476)
+bones/16/position = Vector3(1.0630055e-10, 0.15661657, -6.657889e-10)
+bones/16/rotation = Quaternion(0.30986884, -0.22367853, -0.09837148, 0.9188429)
+bones/17/position = Vector3(-6.9948e-10, 0.16935055, 4.4511908e-11)
+bones/17/rotation = Quaternion(-0.029583711, 0.0006780718, -0.109801896, 0.993513)
+bones/18/position = Vector3(4.712025e-10, 0.22347866, 6.6531936e-10)
+bones/18/rotation = Quaternion(0.0951128, -0.41303548, -0.08862545, 0.9013883)
+bones/19/position = Vector3(9.750145e-12, 0.010800612, 3.8128667e-11)
+bones/19/rotation = Quaternion(0.16692612, 0.0012534658, -0.022788746, 0.98570526)
+bones/20/position = Vector3(-4.6438536e-10, 0.021376405, 1.7897062e-10)
+bones/20/rotation = Quaternion(0.10419125, -0.010429631, 0.06077939, 0.9926436)
+bones/21/rotation = Quaternion(0.0864402, -0.017066948, 0.015696814, 0.9959872)
+bones/23/rotation = Quaternion(0.11673735, 0.026726179, 0.9895769, -0.079974174)
+bones/24/position = Vector3(-9.908568e-10, 0.13917513, 9.710219e-10)
+bones/24/rotation = Quaternion(-0.27496433, -0.055441413, 0.020094967, 0.9596443)
+bones/25/position = Vector3(-2.5385971e-11, 0.03513706, -4.990197e-11)
+bones/25/rotation = Quaternion(0.51741296, -0.08965243, 0.026300516, 0.85062015)
+bones/26/position = Vector3(-1.2105192e-09, 0.10303039, -2.8292063e-10)
+bones/26/rotation = Quaternion(0.25391498, -0.119251736, 0.031563528, 0.9593279)
+bones/28/rotation = Quaternion(-0.11728789, -0.02905818, 0.99114585, 0.055037238)
+bones/29/rotation = Quaternion(-0.20096777, 0.046577036, 0.0031084598, 0.97848505)
+bones/30/rotation = Quaternion(0.5308701, 0.048174173, -0.036993723, 0.84527373)
+bones/31/position = Vector3(-4.7287807e-10, 0.101528846, 1.4307708e-10)
+bones/31/rotation = Quaternion(0.23878624, 0.10177646, -0.025173921, 0.96539575)
+
+[node name="mesh_0" parent="Skeleton3D" index="0" unique_id=1795237700]
+transform = Transform3D(0.9985656, 0, 0.053542204, 0, 1, 0, -0.053542204, 0, 0.9985656, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_ewed5")
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=1154109924 groups=["player"]]
+libraries/Climbing = ExtResource("3_mq81o")
+libraries/ClimbingStand = ExtResource("4_hrnas")
+"libraries/Crouch To Stand" = ExtResource("5_ri8fi")
+"libraries/Hit To Body" = ExtResource("6_1p31k")
+libraries/Idle = ExtResource("7_64owr")
+libraries/Jump = ExtResource("8_by1qk")
+"libraries/Left Strafe" = ExtResource("9_6wr3c")
+"libraries/Right Strafe" = ExtResource("10_omi76")
+libraries/Running = ExtResource("11_udbpp")
+"libraries/Unarmed Run Back" = ExtResource("12_sr4cg")
+"libraries/Unarmed Walk Back" = ExtResource("13_weycg")
+libraries/Walking = ExtResource("14_52o54")
+"libraries/Zombie Punching" = ExtResource("15_qc8v2")
+autoplay = &"mixamo_com"
+playback_default_blend_time = 0.25
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2" unique_id=845322532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0018929243, 0.5571076, 0.052135706)
+shape = SubResource("CapsuleShape3D_phcwn")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="3" unique_id=900235269]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0522087, -0.102202386)
+light_color = Color(0.6855167, 0.99999994, 0.2572918, 1)
+light_energy = 0.5
+light_indirect_energy = 0.5
+light_volumetric_fog_energy = 0.5
+distance_fade_shadow = 20.0
+omni_range = 10.0
+
+[node name="CamOrigin" type="Node3D" parent="." index="4" unique_id=171857851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.008592, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CamOrigin" index="0" unique_id=429422931]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.043098092, -0.088695645)
+spring_length = -2.0
+margin = 0.1
+
+[node name="Camera3D" type="Camera3D" parent="CamOrigin/SpringArm3D" index="0" unique_id=983195406]
+transform = Transform3D(-0.49922448, 0.004574157, -0.027458878, -0.0026657076, 0.4830818, 0.12893742, 0.027709331, 0.12888384, -0.48230815, 0, 0.62935734, -1.4356734)

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d3bi5um33lsxx"]
+
+[ext_resource type="Script" uid="uid://c6rv00y4dq7fr" path="res://Player/character_body_3d.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://br2yo4eua5x40" path="res://totopo_t_pose.tscn" id="2_4ntmi"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i3pqv"]
+margin = 0.0
+radius = 0.25
+height = 1.15
+
+[node name="Player" type="CharacterBody3D" unique_id=630077855]
+script = ExtResource("1_onrkg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=11412371]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0.58825445, -0.006147951)
+shape = SubResource("CapsuleShape3D_i3pqv")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1683048586]
+transform = Transform3D(1, 0, 0, 0, 0.9888137, -0.1491562, 0, 0.1491562, 0.9888137, 0.014910817, 1.1755993, 5.2192364)
+
+[node name="Totopo T-Pose" parent="." unique_id=2068513272 instance=ExtResource("2_4ntmi")]

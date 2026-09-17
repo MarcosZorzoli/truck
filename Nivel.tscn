@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bg37jkb2bhyd6"]
+
+[ext_resource type="PackedScene" uid="uid://br2yo4eua5x40" path="res://totopo_t_pose.tscn" id="2_8g3sk"]
+[ext_resource type="PackedScene" uid="uid://cebjf54pqopal" path="res://House.tscn" id="3_c4cy6"]
+[ext_resource type="PackedScene" uid="uid://cdofh5wd58v86" path="res://Nave.tscn" id="4_0b6j0"]
+[ext_resource type="PackedScene" uid="uid://cpq6ym6fyiu6o" path="res://Camioneta.tscn" id="4_spw24"]
+[ext_resource type="PackedScene" uid="uid://bcjyecm2balrj" path="res://Ground.tscn" id="5_spw24"]
+[ext_resource type="PackedScene" uid="uid://ccd81d0ev0ujp" path="res://House2.tscn" id="6_bxp70"]
+[ext_resource type="PackedScene" uid="uid://eww3d4genk1f" path="res://CamionetaMilitar.tscn" id="7_2027d"]
+[ext_resource type="PackedScene" uid="uid://me055cygkg52" path="res://NPC/NPC.tscn" id="8_mhcqa"]
+[ext_resource type="PackedScene" uid="uid://q8l2jvbbv74v" path="res://Auto.tscn" id="9_ewed5"]
+[ext_resource type="Script" uid="uid://cernye1qpc3cl" path="res://ej.gd" id="10_pyb3b"]
+
+[node name="Node3D" type="Node3D" unique_id=1138053664]
+transform = Transform3D(-0.99941504, 0, -0.0342037, 0, 1, 0, 0.0342037, 0, -0.99941504, 0, 0, 0)
+
+[node name="Suelo" parent="." unique_id=1909613348 instance=ExtResource("5_spw24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.4610596, 0)
+
+[node name="Camioneta" parent="." unique_id=594148575 instance=ExtResource("4_spw24")]
+transform = Transform3D(0.65621537, 0, -0.75457364, 0, 1, 0, 0.75457364, 0, 0.65621537, -2.768898, -2.9054565, -0.23498535)
+
+[node name="Casa" parent="." unique_id=1446800074 instance=ExtResource("3_c4cy6")]
+transform = Transform3D(0.989411, 0, -0.1451412, 0, 1, 0, 0.1451412, 0, 0.989411, -3.5286968, -2.4205933, 8.726538)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1937994640]
+transform = Transform3D(1, 0, 0, 0, -0.6572716, 0.75365376, 0, -0.75365376, -0.6572716, 0.36697388, 6.7269897, -16.53543)
+shadow_enabled = true
+
+[node name="Nave" parent="." unique_id=783729345 instance=ExtResource("4_0b6j0")]
+transform = Transform3D(0.7987953, 0.601603, 0, -0.601603, 0.7987953, 0, 0, 0, 1, 7.1455383, -4.7079163, -6.5256805)
+
+[node name="Casa2" parent="." unique_id=937315861 instance=ExtResource("6_bxp70")]
+transform = Transform3D(0.9980622, 0, -0.062224228, 0, 1, 0, 0.062224228, 0, 0.9980622, 0, -2.4309082, 3.692606)
+
+[node name="CamioMilitar" parent="." unique_id=467793788 instance=ExtResource("7_2027d")]
+transform = Transform3D(-0.6060526, 0, -0.7954245, 0, 1, 0, 0.7954245, 0, -0.6060526, -0.05369772, -2.9869385, 7.254897)
+
+[node name="CamioMilitar2" parent="." unique_id=950637925 instance=ExtResource("7_2027d")]
+transform = Transform3D(0.635094, 0, 0.77243495, 0, 1, 0, -0.77243495, 0, 0.635094, -0.053771973, -2.9869385, -5.6586914)
+
+[node name="T-Pose" parent="." unique_id=1879592043 instance=ExtResource("8_mhcqa")]
+transform = Transform3D(0.07434963, 0, 0.99723226, 0, 1, 0, -0.99723226, 0, 0.07434963, -5.7907944, -1.8330078, 3.7841702)
+
+[node name="T-Pose2" parent="." unique_id=1839841896 instance=ExtResource("8_mhcqa")]
+transform = Transform3D(0.07797478, 0, 0.99695534, 0, 1, 0, -0.99695534, 0, 0.07797478, -9.426872, -1.8330078, 8.683071)
+
+[node name="blockbench_export" parent="." unique_id=314441238 instance=ExtResource("9_ewed5")]
+transform = Transform3D(0.2583582, 0, -0.9660492, 0, 1, 0, 0.9660492, 0, 0.2583582, -8.527588, -2.8995361, 5.8077393)
+
+[node name="Totopo T-Pose" parent="." unique_id=2068513272 instance=ExtResource("2_8g3sk")]
+transform = Transform3D(0.01742772, 0, -1.9999243, 0, 2, 0, 1.9999243, 0, 0.01742772, 7.4019556, -2.9927368, -5.741704)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1481174999]
+script = ExtResource("10_pyb3b")
+
+[connection signal="destroy" from="Casa" to="T-Pose2" method="_on_casa_destroy"]
+[connection signal="destroy" from="Casa2" to="T-Pose" method="_on_casa_2_destroy"]
