@@ -1,16 +1,24 @@
 extends CharacterBody3D
+@onready var raycast1 = $RayCast3D1
+@onready var raycast2 = $RayCast3D2
+@onready var raycast3 = $RayCast3D3
+@onready var PlayerRoot = $"."
+@onready var PlayerModel = $"."
 
-const SPEED = 2.5
+var gravity 
+const SPEED = 3
 const JUMP_VELOCITY = 5
-const ROTATION_SPEED = 3
+const ROTATION_SPEED = 4
 var disableMov : bool = true
 var corre : bool = false
 var correatras : bool = false
 var der : float = 0
 var jump : bool = false
-var ataca : bool = false
+var anim_is_on_ledge : bool = false
+var onledge : bool = false
 
 func _ready() -> void:
+	gravity = get_gravity()
 	$AnimationPlayer.play("Crouch To Stand/mixamo_com")
 	await get_tree().create_timer(2.5667).timeout
 	$AnimationPlayer.play("Idle/mixamo_com")
@@ -20,9 +28,10 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if !disableMov:
 		if not is_on_floor():
-			velocity += get_gravity() * delta
+			velocity += gravity * delta
 		else:
 			jump = false
+		raycast_detect_ledge()
 	# Handle jump.
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
@@ -63,5 +72,36 @@ func Animator() -> void:
 		$AnimationPlayer.play("Left Strafe/mixamo_com")
 	elif !corre and !correatras and der > 0.1:
 		$AnimationPlayer.play("Right Strafe/mixamo_com")
+	elif anim_is_on_ledge:
+		$AnimationPlayer.play("Climbing/mixamo_com")
+		await get_tree().create_timer(4.3).timeout
+		$AnimationPlayer.play("Idle/mixamo_com")
 	else:
 		$AnimationPlayer.play("Idle/mixamo_com")
+		
+func raycast_detect_ledge()-> void:
+	if !raycast1.is_colliding() and raycast2.is_colliding():
+		onledge=true
+		raycast3.enabled = true
+	if onledge:
+		$Skeleton3D/mesh_0.set_as_top_level(true)
+		anim_is_on_ledge=true
+		disableMov=true
+		corre=false
+		correatras=false
+		jump=false
+		Animator()
+	else:
+		disableMov=false
+		anim_is_on_ledge=false
+		
+func teleport () -> void:
+	self.global_transform.origin = raycast3.get_collision_point()
+
+func move_to_body() -> void:
+	PlayerModel.global_transform.origin = self.global_transform.origin
+	PlayerModel.set_as_top_level(false)
+	onledge=false
+	raycast3.enabled=true
+	disableMov=false
+	anim_is_on_ledge=false
