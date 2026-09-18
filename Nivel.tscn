@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://eww3d4genk1f" path="res://CamionetaMilitar.tscn" id="7_2027d"]
 [ext_resource type="PackedScene" uid="uid://me055cygkg52" path="res://NPC/NPC.tscn" id="8_mhcqa"]
 [ext_resource type="PackedScene" uid="uid://q8l2jvbbv74v" path="res://Auto.tscn" id="9_ewed5"]
-[ext_resource type="Script" uid="uid://cernye1qpc3cl" path="res://ej.gd" id="10_pyb3b"]
 
 [node name="Node3D" type="Node3D" unique_id=1138053664]
 transform = Transform3D(-0.99941504, 0, -0.0342037, 0, 1, 0, 0.0342037, 0, -0.99941504, 0, 0, 0)
@@ -31,7 +30,7 @@ shadow_enabled = true
 transform = Transform3D(0.7987953, 0.601603, 0, -0.601603, 0.7987953, 0, 0, 0, 1, 7.1455383, -4.7079163, -6.5256805)
 
 [node name="Casa2" parent="." unique_id=937315861 instance=ExtResource("6_bxp70")]
-transform = Transform3D(0.998062, 0, -0.062224217, 0, 1, 0, 0.062224217, 0, 0.998062, 0, -2.463562, 3.6926053)
+transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 0, -2.463562, 3.6926053)
 
 [node name="CamioMilitar" parent="." unique_id=467793788 instance=ExtResource("7_2027d")]
 transform = Transform3D(-0.6060526, 0, -0.7954245, 0, 1, 0, 0.7954245, 0, -0.6060526, -0.05369772, -2.9869385, 7.254897)
@@ -49,10 +48,7 @@ transform = Transform3D(0.07797478, 0, 0.99695534, 0, 1, 0, -0.99695534, 0, 0.07
 transform = Transform3D(0.2583582, 0, -0.9660492, 0, 1, 0, 0.9660492, 0, 0.2583582, -8.527588, -2.8995361, 5.8077393)
 
 [node name="Totopo T-Pose" parent="." unique_id=2068513272 instance=ExtResource("2_8g3sk")]
-transform = Transform3D(0.008713808, 0, -0.9999619, 0, 1, 0, 0.9999619, 0, 0.008713808, 7.41924, -3.043213, -6.246779)
-
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1481174999]
-script = ExtResource("10_pyb3b")
+transform = Transform3D(-0.5277134, 0, 0.8494223, 0, 1, 0, -0.8494223, 0, -0.5277134, 7.419238, -3.043213, -6.246779)
 
 [connection signal="destroy" from="Casa" to="T-Pose2" method="_on_casa_destroy"]
 [connection signal="destroy" from="Casa2" to="T-Pose" method="_on_casa_2_destroy"]

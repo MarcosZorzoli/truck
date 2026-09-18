@@ -36,6 +36,9 @@ shape = SubResource("ConcavePolygonShape3D_7reba")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="plane2/StaticBody3D" index="0" unique_id=1793460980]
 shape = SubResource("ConcavePolygonShape3D_nr2gs")
 
+[node name="cylinder" parent="." index="3" unique_id=1806568036]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09375, 0.5, 0.5)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="cylinder2" parent_id_path=PackedInt32Array(1932571591) index="0" unique_id=1152793494]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="cylinder2/StaticBody3D" index="0" unique_id=946510856]
